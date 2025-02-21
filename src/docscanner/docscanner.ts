@@ -9,7 +9,7 @@ export const insertText = async (text: string) => {
       await context.sync();
     });
   } catch (error) {
-    console.log("Error: " + error);
+    return error;
   }
 };
 
@@ -41,7 +41,7 @@ export const highlightText = async (term: string) => {
         await context.sync();
       }
     });
-    return true;
+    return;
   } catch (error) {
     return "Error extracting text.";
   }
